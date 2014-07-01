@@ -10,7 +10,7 @@ import org.junit.Test;
 public class NavigatorTest {
 
     @Test
-    public void TestThatNavigatorPointsToDirectionOnRightWhenRotatedRight() {
+    public void testThatNavigatorPointsToDirectionOnRightWhenRotatedRight() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,2);
@@ -24,7 +24,7 @@ public class NavigatorTest {
     }
 
     @Test
-    public void TestThatNavigatorPointsToDirectionOnLeftWhenRotatedLeft() {
+    public void testThatNavigatorPointsToDirectionOnLeftWhenRotatedLeft() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,1);
@@ -38,7 +38,7 @@ public class NavigatorTest {
     }
 
     @Test
-    public void TestThatNavigatorMovesForwardOnXAxisByOneStepIfDirectionAheadIsNorth() {
+    public void testThatNavigatorMovesForwardOnXAxisByOneStepIfDirectionAheadIsNorth() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,1);
@@ -52,7 +52,7 @@ public class NavigatorTest {
     }
 
     @Test
-    public void TestThatNavigatorMovesBackOnYAxisByOneStepIfDirectionAheadIsSouth() {
+    public void testThatNavigatorMovesBackOnYAxisByOneStepIfDirectionAheadIsSouth() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,1);
@@ -66,7 +66,7 @@ public class NavigatorTest {
     }
 
     @Test
-    public void TestThatNavigatorMovesForwardOnYAxisByOneStepIfDirectionAheadIsEast() {
+    public void testThatNavigatorMovesForwardOnYAxisByOneStepIfDirectionAheadIsEast() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,1);
@@ -80,7 +80,7 @@ public class NavigatorTest {
     }
 
     @Test
-    public void TestThatNavigatorMovesBackOnYAxisByOneStepIfDirectionAheadIsWest() {
+    public void testThatNavigatorMovesBackOnYAxisByOneStepIfDirectionAheadIsWest() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,1);
@@ -94,7 +94,7 @@ public class NavigatorTest {
     }
 
     @Test
-    public void TestThatCurrentLocationIsCombinationOfXCoordinateYCoordinateAndDirection() {
+    public void testThatCurrentLocationIsCombinationOfXCoordinateYCoordinateAndDirection() {
         //Given
         Plateau mars = new Plateau(5,5);
         Coordinates atCoordinates = new Coordinates(1,1);
