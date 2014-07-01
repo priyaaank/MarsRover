@@ -36,7 +36,7 @@ public class Navigator implements INavigable {
 
     @Override
     public void move() {
-        Coordinates wouldBeCoordinates = currentCoordinates.newCoordinatesForStepSize(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForXAxis());
+        Coordinates wouldBeCoordinates = currentCoordinates.newCoordinatesForStepSize(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
 
         //ignores the command if rover is bring driven off plateau
         if(plateau.isWithinPlateauDimensions(wouldBeCoordinates)) {
