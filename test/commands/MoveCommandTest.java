@@ -1,6 +1,6 @@
 package commands;
 
-import com.thoughtworks.rover.commands.INavigable;
+import com.thoughtworks.rover.navigation.INavigable;
 import com.thoughtworks.rover.commands.MoveCommand;
 import org.junit.Assert;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.thoughtworks.rover.commands;
+package com.thoughtworks.rover.navigation;
 
 public interface INavigable {
 

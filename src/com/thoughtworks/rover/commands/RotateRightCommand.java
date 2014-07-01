@@ -1,5 +1,7 @@
 package com.thoughtworks.rover.commands;
 
+import com.thoughtworks.rover.navigation.INavigable;
+
 public class RotateRightCommand implements ICommand {
 
     @Override

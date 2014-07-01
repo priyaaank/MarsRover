@@ -1,6 +1,5 @@
 package com.thoughtworks.rover.navigation;
 
-import com.thoughtworks.rover.commands.INavigable;
 import com.thoughtworks.rover.universe.Coordinates;
 import com.thoughtworks.rover.universe.Direction;
 import com.thoughtworks.rover.universe.Plateau;
