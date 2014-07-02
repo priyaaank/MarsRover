@@ -54,6 +54,9 @@ public class CoordinateTest {
         Assert.assertEquals("2 2", coordinatesSet.toString());
     }
 
+    /*
+    Chirag: your testname has "smaller than" and the assert has "greater than". Both should be symmetric
+    **/
     @Test
     public void testThatXCoordinateSmallerThanCurrentCoordinatesAreIdentifiedCorrectly() {
         //Given
