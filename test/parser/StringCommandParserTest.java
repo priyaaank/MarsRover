@@ -16,13 +16,17 @@ public class StringCommandParserTest {
     public void testThatStringLMapsToRotateLeftCommand() {
         //Given
         String commandString = "L";
+        // chirag: you can inline commandString it is not adding any more meaning by itself
         StringCommandParser parser = new StringCommandParser(commandString);
 
         //When
+        // parseToCommands() can be called toCommands(). 
         List<ICommand> commands = parser.parseToCommands();
 
         //Then
         Assert.assertTrue(commands.get(0) instanceof RotateLeftCommand);
+        //Chirag: useful to assert that the size of the commands list is 1, 
+        // needs to be done only in one testcase not all 3
     }
 
     @Test
