@@ -13,6 +13,7 @@ public class CompassTest {
         Compass directionCompass = new Compass().pointingToNorth();
 
         //When
+        //chirag: how about pointRight() instead of pointToDirectionOnRight() ?
         directionCompass.pointToDirectionOnRight();
 
         //Then
@@ -91,6 +92,7 @@ public class CompassTest {
         Assert.assertEquals(Direction.west(), directionCompass.currentDirection());
     }
 
+    // chirag : these four more basic tests ought be on top and the other tests lower in the class
     @Test
     public void testThatDirectionOnLeftOfSouthIsEast() {
         //Given
