@@ -16,6 +16,7 @@ public class PlateauTest {
         Coordinates coordinatesWithinBounds = new Coordinates(5, 0);
 
         //Then
+        //Chirag: how about isInside() instead of isWithinPlateauDimensions() ?
         Assert.assertTrue(mars.isWithinPlateauDimensions(coordinatesWithinBounds));
     }
 
