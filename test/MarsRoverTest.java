@@ -1,7 +1,6 @@
 import com.thoughtworks.rover.MarsRover;
-import com.thoughtworks.rover.navigation.Compass;
-import com.thoughtworks.rover.navigation.Navigator;
 import com.thoughtworks.rover.universe.Coordinates;
+import com.thoughtworks.rover.universe.Direction;
 import com.thoughtworks.rover.universe.Plateau;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,8 +12,7 @@ public class MarsRoverTest {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates initialRoverCoordinates = new Coordinates(1,2);
-        Navigator roverNavigator = new Navigator(new Compass().pointingToNorth(), initialRoverCoordinates, plateau);
-        MarsRover marsRover = new MarsRover(roverNavigator);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, initialRoverCoordinates);
 
         //When
         marsRover.handleCommand("R");
@@ -28,8 +26,7 @@ public class MarsRoverTest {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates initialRoverCoordinates = new Coordinates(1,2);
-        Navigator roverNavigator = new Navigator(new Compass().pointingToSouth(), initialRoverCoordinates, plateau);
-        MarsRover marsRover = new MarsRover(roverNavigator);
+        MarsRover marsRover = new MarsRover(plateau, Direction.S, initialRoverCoordinates);
 
         //When
         marsRover.handleCommand("L");
@@ -43,8 +40,7 @@ public class MarsRoverTest {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates initialRoverCoordinates = new Coordinates(1,2);
-        Navigator roverNavigator = new Navigator(new Compass().pointingToNorth(), initialRoverCoordinates, plateau);
-        MarsRover marsRover = new MarsRover(roverNavigator);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, initialRoverCoordinates);
 
         //When
         marsRover.handleCommand("M");
@@ -58,8 +54,7 @@ public class MarsRoverTest {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates initialRoverCoordinates = new Coordinates(3,3);
-        Navigator roverNavigator = new Navigator(new Compass().pointingToEast(), initialRoverCoordinates, plateau);
-        MarsRover marsRover = new MarsRover(roverNavigator);
+        MarsRover marsRover = new MarsRover(plateau, Direction.E, initialRoverCoordinates);
 
         //When
         marsRover.handleCommand("MMRMMRMRRM");
@@ -73,8 +68,7 @@ public class MarsRoverTest {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates initialRoverCoordinates = new Coordinates(3,3);
-        Navigator roverNavigator = new Navigator(new Compass().pointingToNorth(), initialRoverCoordinates, plateau);
-        MarsRover marsRover = new MarsRover(roverNavigator);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, initialRoverCoordinates);
 
         //When
         marsRover.handleCommand("MMMMMMMMMMR");

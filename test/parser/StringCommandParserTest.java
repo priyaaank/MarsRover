@@ -1,10 +1,10 @@
 package parser;
 
-import com.thoughtworks.rover.parser.StringCommandParser;
 import com.thoughtworks.rover.commands.ICommand;
 import com.thoughtworks.rover.commands.MoveCommand;
 import com.thoughtworks.rover.commands.RotateLeftCommand;
 import com.thoughtworks.rover.commands.RotateRightCommand;
+import com.thoughtworks.rover.parser.StringCommandParser;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,62 +1,69 @@
 package com.thoughtworks.rover.universe;
 
-public class Direction {
+public enum Direction {
 
-    private static final int ZERO = 0;
-    private static final int POSITIVE_ONE = 1;
-    private static final int NEGATIVE_ONE = -1;
-    private static Direction north;
-    private static Direction south;
-    private static Direction west;
-    private static Direction east;
+    N(0,1) {
+        @Override
+        public Direction left() {
+            return W;
+        }
 
-    private DirectionName name;
-    private int stepSizeOnXAxis;
-    private int stepSizeOnYAxis;
+        @Override
+        public Direction right() {
+            return E;
+        }
+    },
+    S(0,-1) {
+        @Override
+        public Direction right() {
+            return W;
+        }
 
-    private Direction(DirectionName name, final int stepSizeOnXAxis, final int stepSizeOnYAxis) {
-        this.name = name;
+        @Override
+        public Direction left() {
+            return E;
+        }
+    },
+    E(1,0) {
+        @Override
+        public Direction right() {
+            return S;
+        }
+
+        @Override
+        public Direction left() {
+            return N;
+        }
+    },
+    W(-1,0) {
+        @Override
+        public Direction right() {
+            return N;
+        }
+
+        @Override
+        public Direction left() {
+            return S;
+        }
+    };
+
+    private final int stepSizeOnXAxis;
+    private final int stepSizeOnYAxis;
+
+    Direction(final int stepSizeOnXAxis, final int stepSizeOnYAxis) {
         this.stepSizeOnXAxis = stepSizeOnXAxis;
         this.stepSizeOnYAxis = stepSizeOnYAxis;
     }
 
+    public abstract Direction right();
+    public abstract Direction left();
+
     public int stepSizeForXAxis() {
-        return stepSizeOnXAxis;
+        return this.stepSizeOnXAxis;
     }
 
     public int stepSizeForYAxis() {
-        return stepSizeOnYAxis;
+        return this.stepSizeOnYAxis;
     }
 
-    public static Direction north() {
-        if(north == null) north = new Direction(DirectionName.North, ZERO, POSITIVE_ONE);
-        return north;
-    }
-
-    public static Direction south() {
-        if(south == null) south = new Direction(DirectionName.South, ZERO, NEGATIVE_ONE);
-        return south;
-    }
-
-    public static Direction east() {
-        if(east == null) east = new Direction(DirectionName.East, POSITIVE_ONE, ZERO);
-        return east;
-    }
-
-    public static Direction west() {
-        if(west == null) west = new Direction(DirectionName.West, NEGATIVE_ONE, ZERO);
-        return west;
-    }
-
-    @Override
-    public String toString() {
-        return name.toString().substring(0,1);
-    }
-
-    enum DirectionName {
-        North,
-        South,
-        East,
-        West
-    }
 }
