@@ -26,7 +26,7 @@ public class StringCommandParser {
         this.commandString = commandString;
     }
 
-    public List<ICommand> parseToCommands() {
+    public List<ICommand> toCommands() {
         return buildCommandsList(commandString.toUpperCase());
     }
 

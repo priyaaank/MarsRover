@@ -23,7 +23,7 @@ public class MarsRover implements INavigable {
     }
 
     public void run(String commandString) {
-        List<ICommand> roverCommands = new StringCommandParser(commandString).parseToCommands();
+        List<ICommand> roverCommands = new StringCommandParser(commandString).toCommands();
         for (ICommand command : roverCommands) {
             command.execute(this);
         }

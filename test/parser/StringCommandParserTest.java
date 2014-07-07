@@ -15,28 +15,23 @@ public class StringCommandParserTest {
     @Test
     public void testThatStringLMapsToRotateLeftCommand() {
         //Given
-        String commandString = "L";
-        // chirag: you can inline commandString it is not adding any more meaning by itself
-        StringCommandParser parser = new StringCommandParser(commandString);
+        StringCommandParser parser = new StringCommandParser("L");
 
         //When
-        // parseToCommands() can be called toCommands(). 
-        List<ICommand> commands = parser.parseToCommands();
+        List<ICommand> commands = parser.toCommands();
 
         //Then
         Assert.assertTrue(commands.get(0) instanceof RotateLeftCommand);
-        //Chirag: useful to assert that the size of the commands list is 1, 
-        // needs to be done only in one testcase not all 3
+        Assert.assertEquals(1, commands.size());
     }
 
     @Test
     public void testThatStringRMapsToRotateRightCommand() {
         //Given
-        String commandString = "R";
-        StringCommandParser parser = new StringCommandParser(commandString);
+        StringCommandParser parser = new StringCommandParser("R");
 
         //When
-        List<ICommand> commands = parser.parseToCommands();
+        List<ICommand> commands = parser.toCommands();
 
         //Then
         Assert.assertTrue(commands.get(0) instanceof RotateRightCommand);
@@ -45,11 +40,10 @@ public class StringCommandParserTest {
     @Test
     public void testThatStringMMapsToMoveCommand() {
         //Given
-        String commandString = "M";
-        StringCommandParser parser = new StringCommandParser(commandString);
+        StringCommandParser parser = new StringCommandParser("M");
 
         //When
-        List<ICommand> commands = parser.parseToCommands();
+        List<ICommand> commands = parser.toCommands();
 
         //Then
         Assert.assertTrue(commands.get(0) instanceof MoveCommand);
