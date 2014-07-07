@@ -10,7 +10,7 @@ public class Plateau {
         this.topRightCoordinates.changeYCoordinatesBy(topRightYCoordinate);
     }
 
-    public boolean isWithinPlateauDimensions(Coordinates coordinates) {
+    public boolean isInside(Coordinates coordinates) {
         return this.bottomLeftCoordinates.isLessThan(coordinates) && this.topRightCoordinates.isGreaterThan(coordinates);
     }
 

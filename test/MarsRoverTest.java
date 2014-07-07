@@ -8,70 +8,70 @@ import org.junit.Test;
 public class MarsRoverTest {
 
     @Test
-    public void TestThatRoverCanRotateRight() {
+    public void canRotateRight() {
         //Given
         Plateau plateau = new Plateau(5,5);
-        Coordinates initialRoverCoordinates = new Coordinates(1,2);
-        MarsRover marsRover = new MarsRover(plateau, Direction.N, initialRoverCoordinates);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
-        marsRover.handleCommand("R");
+        marsRover.run("R");
 
         //then
         Assert.assertEquals("1 2 E", marsRover.currentLocation());
     }
 
     @Test
-    public void TestThatRoverCanRotateLeft() {
+    public void canRotateLeft() {
         //Given
         Plateau plateau = new Plateau(5,5);
-        Coordinates initialRoverCoordinates = new Coordinates(1,2);
-        MarsRover marsRover = new MarsRover(plateau, Direction.S, initialRoverCoordinates);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
-        marsRover.handleCommand("L");
+        marsRover.run("L");
 
         //then
-        Assert.assertEquals("1 2 E", marsRover.currentLocation());
+        Assert.assertEquals("1 2 W", marsRover.currentLocation());
     }
 
     @Test
-    public void TestThatRoverCanMove() {
+    public void canMove() {
         //Given
         Plateau plateau = new Plateau(5,5);
-        Coordinates initialRoverCoordinates = new Coordinates(1,2);
-        MarsRover marsRover = new MarsRover(plateau, Direction.N, initialRoverCoordinates);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
-        marsRover.handleCommand("M");
+        marsRover.run("M");
 
         //then
         Assert.assertEquals("1 3 N", marsRover.currentLocation());
     }
 
     @Test
-    public void TestThatRoverCanProcessAStringOfCommands() {
+    public void canProcessCommand() {
         //Given
         Plateau plateau = new Plateau(5,5);
-        Coordinates initialRoverCoordinates = new Coordinates(3,3);
-        MarsRover marsRover = new MarsRover(plateau, Direction.E, initialRoverCoordinates);
+        Coordinates startingPosition = new Coordinates(3,3);
+        MarsRover marsRover = new MarsRover(plateau, Direction.E, startingPosition);
 
         //When
-        marsRover.handleCommand("MMRMMRMRRM");
+        marsRover.run("MMRMMRMRRM");
 
         //then
         Assert.assertEquals("5 1 E", marsRover.currentLocation());
     }
 
     @Test
-    public void TestThatRoverIgnoredTheCommandToDriveOffPlateau() {
+    public void wontDriveOffPlateau() {
         //Given
         Plateau plateau = new Plateau(5,5);
-        Coordinates initialRoverCoordinates = new Coordinates(3,3);
-        MarsRover marsRover = new MarsRover(plateau, Direction.N, initialRoverCoordinates);
+        Coordinates startingPosition = new Coordinates(3,3);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
-        marsRover.handleCommand("MMMMMMMMMMR");
+        marsRover.run("MMMMMMMMMMR");
 
         //then
         Assert.assertEquals("3 5 E", marsRover.currentLocation());

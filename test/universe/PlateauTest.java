@@ -13,10 +13,10 @@ public class PlateauTest {
         Plateau mars = new Plateau(5,5);
 
         //When
-        Coordinates coordinatesWithinBounds = new Coordinates(5, 0);
+        Coordinates plateauCoordinates = new Coordinates(5, 0);
 
         //Then
-        Assert.assertTrue(mars.isWithinPlateauDimensions(coordinatesWithinBounds));
+        Assert.assertTrue(mars.isInside(plateauCoordinates));
     }
 
     @Test
@@ -25,10 +25,10 @@ public class PlateauTest {
         Plateau mars = new Plateau(5,5);
 
         //When
-        Coordinates pointWithXCoordinateOutsideBounds = new Coordinates(6, 0);
+        Coordinates coordinates = new Coordinates(6, 0);
 
         //Then
-        Assert.assertFalse(mars.isWithinPlateauDimensions(pointWithXCoordinateOutsideBounds));
+        Assert.assertFalse(mars.isInside(coordinates));
     }
 
     @Test
@@ -37,11 +37,11 @@ public class PlateauTest {
         Plateau mars = new Plateau(5,5);
 
         //When
-        Coordinates pointWithYCoordinateOutsideBounds = new Coordinates(0, 6);
+        Coordinates coordinates = new Coordinates(0, 6);
 
 
         //Then
-        Assert.assertFalse(mars.isWithinPlateauDimensions(pointWithYCoordinateOutsideBounds));
+        Assert.assertFalse(mars.isInside(coordinates));
     }
 
     @Test
@@ -50,11 +50,11 @@ public class PlateauTest {
         Plateau mars = new Plateau(5,5);
 
         //When
-        Coordinates pointWithYCoordinateOutsideBounds = new Coordinates(0, -1);
+        Coordinates coordinates = new Coordinates(0, -1);
 
 
         //Then
-        Assert.assertFalse(mars.isWithinPlateauDimensions(pointWithYCoordinateOutsideBounds));
+        Assert.assertFalse(mars.isInside(coordinates));
     }
 
     @Test
@@ -63,10 +63,10 @@ public class PlateauTest {
         Plateau mars = new Plateau(5,5);
 
         //When
-        Coordinates pointWithXCoordinateOutsideBounds = new Coordinates(-1, 0);
+        Coordinates coordinates = new Coordinates(-1, 0);
 
 
         //Then
-        Assert.assertFalse(mars.isWithinPlateauDimensions(pointWithXCoordinateOutsideBounds));
+        Assert.assertFalse(mars.isInside(coordinates));
     }
 }

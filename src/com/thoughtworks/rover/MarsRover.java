@@ -22,7 +22,7 @@ public class MarsRover implements INavigable {
         this.currentCoordinates = coordinates;
     }
 
-    public void handleCommand(String commandString) {
+    public void run(String commandString) {
         List<ICommand> roverCommands = new StringCommandParser(commandString).parseToCommands();
         for (ICommand command : roverCommands) {
             command.execute(this);
@@ -35,12 +35,12 @@ public class MarsRover implements INavigable {
 
     @Override
     public void rotateRight() {
-        this.currentDirection.right();
+        this.currentDirection = this.currentDirection.right();
     }
 
     @Override
     public void rotateLeft() {
-        this.currentDirection.left();
+        this.currentDirection = this.currentDirection.left();
     }
 
     @Override
@@ -48,7 +48,7 @@ public class MarsRover implements INavigable {
         Coordinates wouldBeCoordinates = currentCoordinates.newCoordinatesForStepSize(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
 
         //ignores the command if rover is bring driven off plateau
-        if(plateau.isWithinPlateauDimensions(wouldBeCoordinates)) {
+        if(plateau.isInside(wouldBeCoordinates)) {
             currentCoordinates.changeXCoordinatesBy(currentDirection.stepSizeForXAxis());
             currentCoordinates.changeYCoordinatesBy(currentDirection.stepSizeForYAxis());
         }
