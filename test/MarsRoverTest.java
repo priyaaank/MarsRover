@@ -8,7 +8,49 @@ import org.junit.Test;
 public class MarsRoverTest {
 
     @Test
+    public void canRotateLeft() {
+        //Given
+        Plateau plateau = new Plateau(5,5);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
+
+        //When
+        marsRover.rotateLeft();
+
+        //then
+        Assert.assertEquals("1 2 W", marsRover.currentLocation());
+    }
+
+    @Test
     public void canRotateRight() {
+        //Given
+        Plateau plateau = new Plateau(5,5);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
+
+        //When
+        marsRover.rotateRight();
+
+        //then
+        Assert.assertEquals("1 2 E", marsRover.currentLocation());
+    }
+
+    @Test
+    public void canMove() {
+        //Given
+        Plateau plateau = new Plateau(5,5);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
+
+        //When
+        marsRover.move();
+
+        //then
+        Assert.assertEquals("1 3 N", marsRover.currentLocation());
+    }
+
+    @Test
+    public void canRunCommandToRotateRight() {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates startingPosition = new Coordinates(1,2);
@@ -22,7 +64,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void canRotateLeft() {
+    public void canRunCommandToRotateLeft() {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates startingPosition = new Coordinates(1,2);
@@ -36,7 +78,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void canMove() {
+    public void canRunCommandToMove() {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates startingPosition = new Coordinates(1,2);
@@ -50,7 +92,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void canProcessCommand() {
+    public void canRunCommandWithMultipleInstructions() {
         //Given
         Plateau plateau = new Plateau(5,5);
         Coordinates startingPosition = new Coordinates(3,3);
@@ -77,4 +119,16 @@ public class MarsRoverTest {
         Assert.assertEquals("3 5 E", marsRover.currentLocation());
     }
 
+    @Test
+    public void canProvideCurrentLocationAsString() {
+        //Given
+        Plateau plateau = new Plateau(5,5);
+        Coordinates startingPosition = new Coordinates(3,3);
+
+        //When
+        MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
+
+        //then
+        Assert.assertEquals("3 3 N", marsRover.currentLocation());
+    }
 }
