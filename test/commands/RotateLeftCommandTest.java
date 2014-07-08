@@ -1,7 +1,10 @@
 package commands;
 
-import com.thoughtworks.rover.navigation.INavigable;
+import com.thoughtworks.rover.MarsRover;
 import com.thoughtworks.rover.commands.RotateLeftCommand;
+import com.thoughtworks.rover.universe.Coordinates;
+import com.thoughtworks.rover.universe.Direction;
+import com.thoughtworks.rover.universe.Plateau;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,32 +14,15 @@ public class RotateLeftCommandTest {
     public void testThatRotateLeftCommandRotatesTheNavigableObjectLeft() {
         //Given
         RotateLeftCommand command = new RotateLeftCommand();
-        MovableRover rover = new MovableRover();
+        Plateau plateau = new Plateau(5,5);
+        Coordinates startingPosition = new Coordinates(1,2);
+        MarsRover rover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
         command.execute(rover);
 
         //Then
-        Assert.assertTrue(rover.rotated);
+        Assert.assertEquals("1 2 W", rover.currentLocation());
     }
 
-    class MovableRover implements INavigable {
-
-        public boolean rotated = false;
-
-        @Override
-        public void rotateRight() {
-            //Do nothing
-        }
-
-        @Override
-        public void rotateLeft() {
-            rotated = true;
-        }
-
-        @Override
-        public void move() {
-            //Do nothing
-        }
-    }
 }

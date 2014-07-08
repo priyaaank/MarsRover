@@ -1,9 +1,9 @@
 package com.thoughtworks.rover.commands;
 
-import com.thoughtworks.rover.navigation.INavigable;
+import com.thoughtworks.rover.MarsRover;
 
 public interface ICommand {
 
-    public void execute(INavigable navigable);
+    public void execute(final MarsRover rover);
 
 }

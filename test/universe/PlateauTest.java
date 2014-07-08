@@ -16,7 +16,7 @@ public class PlateauTest {
         Coordinates plateauCoordinates = new Coordinates(5, 0);
 
         //Then
-        Assert.assertTrue(mars.isInside(plateauCoordinates));
+        Assert.assertTrue(mars.hasWithinBounds(plateauCoordinates));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class PlateauTest {
         Coordinates coordinates = new Coordinates(6, 0);
 
         //Then
-        Assert.assertFalse(mars.isInside(coordinates));
+        Assert.assertFalse(mars.hasWithinBounds(coordinates));
     }
 
     @Test
@@ -41,7 +41,7 @@ public class PlateauTest {
 
 
         //Then
-        Assert.assertFalse(mars.isInside(coordinates));
+        Assert.assertFalse(mars.hasWithinBounds(coordinates));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class PlateauTest {
 
 
         //Then
-        Assert.assertFalse(mars.isInside(coordinates));
+        Assert.assertFalse(mars.hasWithinBounds(coordinates));
     }
 
     @Test
@@ -67,6 +67,6 @@ public class PlateauTest {
 
 
         //Then
-        Assert.assertFalse(mars.isInside(coordinates));
+        Assert.assertFalse(mars.hasWithinBounds(coordinates));
     }
 }

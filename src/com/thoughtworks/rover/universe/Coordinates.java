@@ -10,12 +10,8 @@ public class Coordinates {
         this.yCoordinate = yCoordinate;
     }
 
-    public void changeXCoordinatesBy(int stepValue) {
-        xCoordinate = xCoordinate + stepValue;
-    }
-
-    public void changeYCoordinatesBy(int stepValue) {
-        yCoordinate = yCoordinate + stepValue;
+    public Coordinates newCoordinatesFor(final int xCoordinateStepValue, final int yCoordinateStepValue) {
+        return new Coordinates(this.xCoordinate + xCoordinateStepValue, this.yCoordinate + yCoordinateStepValue);
     }
 
     @Override
@@ -27,31 +23,31 @@ public class Coordinates {
         return coordinateOutput.toString();
     }
 
-    public boolean isGreaterThan(Coordinates coordinates) {
+    public boolean isGreaterThan(final Coordinates coordinates) {
         return isXCoordinateInInnerBounds(coordinates.xCoordinate) && isYCoordinateInInnerBounds(coordinates.yCoordinate);
     }
 
-    public boolean isLessThan(Coordinates coordinates) {
+    public boolean isLessThan(final Coordinates coordinates) {
         return isXCoordinateInOuterBounds(coordinates.xCoordinate) && isYCoordinateInOuterBounds(coordinates.yCoordinate);
     }
 
-    private boolean isXCoordinateInOuterBounds(int xCoordinate) {
+    private boolean isXCoordinateInOuterBounds(final int xCoordinate) {
         return xCoordinate >= this.xCoordinate;
     }
 
-    private boolean isYCoordinateInOuterBounds(int yCoordinate) {
+    private boolean isYCoordinateInOuterBounds(final int yCoordinate) {
         return yCoordinate >= this.yCoordinate;
     }
 
-    private boolean isYCoordinateInInnerBounds(int yCoordinate) {
+    private boolean isYCoordinateInInnerBounds(final int yCoordinate) {
         return yCoordinate <= this.yCoordinate;
     }
 
-    private boolean isXCoordinateInInnerBounds(int xCoordinate) {
+    private boolean isXCoordinateInInnerBounds(final int xCoordinate) {
         return xCoordinate <= this.xCoordinate;
     }
 
-    public Coordinates newCoordinatesForStepSize(int xCoordinateStepValue, int yCoordinateStepValue) {
+    public Coordinates newCoordinatesForStepSize(final int xCoordinateStepValue, final int yCoordinateStepValue) {
         return new Coordinates(xCoordinate+xCoordinateStepValue, yCoordinate+yCoordinateStepValue);
     }
 

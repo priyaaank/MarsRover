@@ -1,12 +1,12 @@
 package com.thoughtworks.rover.commands;
 
-import com.thoughtworks.rover.navigation.INavigable;
+import com.thoughtworks.rover.MarsRover;
 
 public class RotateLeftCommand implements ICommand {
 
     @Override
-    public void execute(INavigable navigable) {
-        navigable.rotateLeft();
+    public void execute(final MarsRover rover) {
+        rover.rotateLeft();
     }
 
 }

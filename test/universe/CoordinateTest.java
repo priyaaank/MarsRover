@@ -12,7 +12,7 @@ public class CoordinateTest {
         Coordinates coordinatesSet = new Coordinates(2,3);
 
         //When
-        coordinatesSet.changeXCoordinatesBy(1);
+        coordinatesSet = coordinatesSet.newCoordinatesFor(1, 0);
 
         //Then
         Assert.assertEquals("3 3", coordinatesSet.toString());
@@ -24,7 +24,7 @@ public class CoordinateTest {
         Coordinates coordinatesSet = new Coordinates(2,3);
 
         //When
-        coordinatesSet.changeXCoordinatesBy(-1);
+        coordinatesSet = coordinatesSet.newCoordinatesFor(-1, 0);
 
         //Then
         Assert.assertEquals("1 3", coordinatesSet.toString());
@@ -36,7 +36,7 @@ public class CoordinateTest {
         Coordinates coordinatesSet = new Coordinates(2,3);
 
         //When
-        coordinatesSet.changeYCoordinatesBy(1);
+        coordinatesSet = coordinatesSet.newCoordinatesFor(0, 1);
 
         //Then
         Assert.assertEquals("2 4", coordinatesSet.toString());
@@ -48,7 +48,7 @@ public class CoordinateTest {
         Coordinates coordinatesSet = new Coordinates(2,3);
 
         //When
-        coordinatesSet.changeYCoordinatesBy(-1);
+        coordinatesSet = coordinatesSet.newCoordinatesFor(0, -1);
 
         //Then
         Assert.assertEquals("2 2", coordinatesSet.toString());

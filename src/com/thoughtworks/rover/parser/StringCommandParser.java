@@ -5,20 +5,18 @@ import com.thoughtworks.rover.commands.MoveCommand;
 import com.thoughtworks.rover.commands.RotateLeftCommand;
 import com.thoughtworks.rover.commands.RotateRightCommand;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class StringCommandParser {
 
-    private static Map<String, ICommand> stringToCommandMap = new HashMap<String, ICommand>();
+    public static final String BY_EACH_CHARACTER = "";
+    public static final int START_INDEX = 1;
 
-    static {
-        stringToCommandMap.put("L", new RotateLeftCommand());
-        stringToCommandMap.put("R", new RotateRightCommand());
-        stringToCommandMap.put("M", new MoveCommand());
-    }
+    private static Map<String, ICommand> stringToCommandMap = new HashMap<String, ICommand>() {{
+        put("L", new RotateLeftCommand());
+        put("R", new RotateRightCommand());
+        put("M", new MoveCommand());
+    }};
 
     private String commandString;
 
@@ -27,19 +25,30 @@ public class StringCommandParser {
     }
 
     public List<ICommand> toCommands() {
-        return buildCommandsList(commandString.toUpperCase());
+        if(isNullOrEmpty(commandString)) return new ArrayList<ICommand>();
+        return buildCommandsList(commandString);
     }
 
-    private List<ICommand> buildCommandsList(String commandString) {
+    private List<ICommand> buildCommandsList(final String commandString) {
         List<ICommand> commands = new ArrayList<ICommand>();
-        for(int index =0; index < commandString.length(); index++) {
-            ICommand mappedCommand = lookupEquivalentCommand(commandString.substring(index, index + 1));
+
+        for(String commandCharacter : commandCharactersFrom(commandString)) {
+            ICommand mappedCommand = lookupEquivalentCommand(commandCharacter.toUpperCase());
             commands.add(mappedCommand);
         }
+
         return commands;
     }
 
-    private ICommand lookupEquivalentCommand(String commandString) {
+    private boolean isNullOrEmpty(final String commandString) {
+        return (null == commandString || commandString.trim().length() == 0);
+    }
+
+    private String[] commandCharactersFrom(final String commandString) {
+        return Arrays.copyOfRange(commandString.split(BY_EACH_CHARACTER), START_INDEX, commandString.length() + 1);
+    }
+
+    private ICommand lookupEquivalentCommand(final String commandString) {
         return stringToCommandMap.get(commandString);
     }
 

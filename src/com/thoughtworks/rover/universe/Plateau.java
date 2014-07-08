@@ -6,11 +6,10 @@ public class Plateau {
     private Coordinates bottomLeftCoordinates = new Coordinates(0, 0);
 
     public Plateau(final int topRightXCoordinate, final int topRightYCoordinate) {
-        this.topRightCoordinates.changeXCoordinatesBy(topRightXCoordinate);
-        this.topRightCoordinates.changeYCoordinatesBy(topRightYCoordinate);
+        this.topRightCoordinates = this.topRightCoordinates.newCoordinatesFor(topRightXCoordinate, topRightYCoordinate);
     }
 
-    public boolean isInside(Coordinates coordinates) {
+    public boolean hasWithinBounds(final Coordinates coordinates) {
         return this.bottomLeftCoordinates.isLessThan(coordinates) && this.topRightCoordinates.isGreaterThan(coordinates);
     }
 
