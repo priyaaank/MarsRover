@@ -8,7 +8,7 @@ import org.junit.Test;
 public class PlateauTest {
 
     @Test
-    public void testThatPlateauCanIdentifyWhenACoordinateIsInsideItsBounds() {
+    public void locationWithCoordinateWithinBoundsIsIdentified() {
         //Given
         Plateau mars = new Plateau(5,5);
 
@@ -20,7 +20,7 @@ public class PlateauTest {
     }
 
     @Test
-    public void testThatPlateauCanIdentifyWhenXCoordinateIsOutsideItsUpperXCoordinateBound() {
+    public void locationWithPositiveXCoordinateOutsideBoundsIsIdentified() {
         //Given
         Plateau mars = new Plateau(5,5);
 
@@ -32,7 +32,20 @@ public class PlateauTest {
     }
 
     @Test
-    public void testThatPlateauCanIdentifyWhenYCoordinateIsOutsideItsUpperYCoordinateBound() {
+    public void locationWithNegativeXCoordinateOutsideBoundsIsIdentified() {
+        //Given
+        Plateau mars = new Plateau(5,5);
+
+        //When
+        Coordinates coordinates = new Coordinates(-1, 0);
+
+
+        //Then
+        Assert.assertFalse(mars.hasWithinBounds(coordinates));
+    }
+
+    @Test
+    public void locationWithPositiveYCoordinateOutsideBoundsIsIdentified() {
         //Given
         Plateau mars = new Plateau(5,5);
 
@@ -45,25 +58,12 @@ public class PlateauTest {
     }
 
     @Test
-    public void testThatPlateauCanIdentifyWhenYCoordinateIsOutsideItsLowerYCoordinateBound() {
+    public void locationWithNegativeYCoordinateOutsideBoundsIsIdentified() {
         //Given
         Plateau mars = new Plateau(5,5);
 
         //When
         Coordinates coordinates = new Coordinates(0, -1);
-
-
-        //Then
-        Assert.assertFalse(mars.hasWithinBounds(coordinates));
-    }
-
-    @Test
-    public void testThatPlateauCanIdentifyWhenXCoordinateIsOutsideItsLowerXCoordinateBound() {
-        //Given
-        Plateau mars = new Plateau(5,5);
-
-        //When
-        Coordinates coordinates = new Coordinates(-1, 0);
 
 
         //Then

@@ -23,27 +23,27 @@ public class Coordinates {
         return coordinateOutput.toString();
     }
 
-    public boolean isGreaterThan(final Coordinates coordinates) {
-        return isXCoordinateInInnerBounds(coordinates.xCoordinate) && isYCoordinateInInnerBounds(coordinates.yCoordinate);
+    public boolean hasWithinBounds(final Coordinates coordinates) {
+        return isXCoordinateWithinBounds(coordinates.xCoordinate) && isYCoordinateWithinBounds(coordinates.yCoordinate);
     }
 
-    public boolean isLessThan(final Coordinates coordinates) {
-        return isXCoordinateInOuterBounds(coordinates.xCoordinate) && isYCoordinateInOuterBounds(coordinates.yCoordinate);
+    public boolean hasOutsideBounds(final Coordinates coordinates) {
+        return isXCoordinateInOutsideBounds(coordinates.xCoordinate) && isYCoordinateInOutsideBounds(coordinates.yCoordinate);
     }
 
-    private boolean isXCoordinateInOuterBounds(final int xCoordinate) {
+    private boolean isXCoordinateInOutsideBounds(final int xCoordinate) {
         return xCoordinate >= this.xCoordinate;
     }
 
-    private boolean isYCoordinateInOuterBounds(final int yCoordinate) {
+    private boolean isYCoordinateInOutsideBounds(final int yCoordinate) {
         return yCoordinate >= this.yCoordinate;
     }
 
-    private boolean isYCoordinateInInnerBounds(final int yCoordinate) {
+    private boolean isYCoordinateWithinBounds(final int yCoordinate) {
         return yCoordinate <= this.yCoordinate;
     }
 
-    private boolean isXCoordinateInInnerBounds(final int xCoordinate) {
+    private boolean isXCoordinateWithinBounds(final int xCoordinate) {
         return xCoordinate <= this.xCoordinate;
     }
 

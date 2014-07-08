@@ -13,6 +13,7 @@ public enum Direction {
             return E;
         }
     },
+
     S(0,-1) {
         @Override
         public Direction right() {
@@ -24,6 +25,7 @@ public enum Direction {
             return E;
         }
     },
+
     E(1,0) {
         @Override
         public Direction right() {
@@ -35,6 +37,7 @@ public enum Direction {
             return N;
         }
     },
+
     W(-1,0) {
         @Override
         public Direction right() {

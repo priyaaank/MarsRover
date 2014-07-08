@@ -10,7 +10,7 @@ public class Plateau {
     }
 
     public boolean hasWithinBounds(final Coordinates coordinates) {
-        return this.bottomLeftCoordinates.isLessThan(coordinates) && this.topRightCoordinates.isGreaterThan(coordinates);
+        return this.bottomLeftCoordinates.hasOutsideBounds(coordinates) && this.topRightCoordinates.hasWithinBounds(coordinates);
     }
 
 }

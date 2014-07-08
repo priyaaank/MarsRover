@@ -7,118 +7,115 @@ import org.junit.Test;
 public class CoordinateTest {
 
     @Test
-    public void testThatXCoordinateValueIsIncrementWhenStepValueIsPositive() {
+    public void xCoordinatesAreIncrementedForPositiveValue() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(2,3);
+        Coordinates boundaryCoordinates = new Coordinates(2,3);
 
         //When
-        coordinatesSet = coordinatesSet.newCoordinatesFor(1, 0);
+        boundaryCoordinates = boundaryCoordinates.newCoordinatesFor(1, 0);
 
         //Then
-        Assert.assertEquals("3 3", coordinatesSet.toString());
+        Assert.assertEquals("3 3", boundaryCoordinates.toString());
     }
 
     @Test
-    public void testThatXCoordinateValueIsDecrementWhenStepValueIsNegative() {
+    public void xCoordinatesAreDecrementedForNegativeValue() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(2,3);
+        Coordinates boundaryCoordinates = new Coordinates(2,3);
 
         //When
-        coordinatesSet = coordinatesSet.newCoordinatesFor(-1, 0);
+        boundaryCoordinates = boundaryCoordinates.newCoordinatesFor(-1, 0);
 
         //Then
-        Assert.assertEquals("1 3", coordinatesSet.toString());
+        Assert.assertEquals("1 3", boundaryCoordinates.toString());
     }
 
     @Test
-    public void testThatYCoordinateValueIsIncrementWhenStepValueIsPositive() {
+    public void yCoordinatesAreIncrementedForPositiveValue() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(2,3);
+        Coordinates boundaryCoordinates = new Coordinates(2,3);
 
         //When
-        coordinatesSet = coordinatesSet.newCoordinatesFor(0, 1);
+        boundaryCoordinates = boundaryCoordinates.newCoordinatesFor(0, 1);
 
         //Then
-        Assert.assertEquals("2 4", coordinatesSet.toString());
+        Assert.assertEquals("2 4", boundaryCoordinates.toString());
     }
 
     @Test
-    public void testThatYCoordinateValueIsDecrementWhenStepValueIsNegative() {
+    public void yCoordinatesAreDecrementedForNegativeValue() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(2,3);
+        Coordinates boundaryCoordinates = new Coordinates(2,3);
 
         //When
-        coordinatesSet = coordinatesSet.newCoordinatesFor(0, -1);
+        boundaryCoordinates = boundaryCoordinates.newCoordinatesFor(0, -1);
 
         //Then
-        Assert.assertEquals("2 2", coordinatesSet.toString());
+        Assert.assertEquals("2 2", boundaryCoordinates.toString());
     }
 
-    /*
-    Chirag: your testname has "smaller than" and the assert has "greater than". Both should be symmetric
-    **/
     @Test
-    public void testThatXCoordinateSmallerThanCurrentCoordinatesAreIdentifiedCorrectly() {
+    public void pointWithXCoordinateWithinBoundaryAreIdentified() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(5,5);
+        Coordinates boundaryCoordinates = new Coordinates(5,5);
 
         //When
-        Coordinates coordinatesToCheck = new Coordinates(4,5);
+        Coordinates internalPoint = new Coordinates(4,5);
 
         //Then
-        Assert.assertTrue(coordinatesSet.isGreaterThan(coordinatesToCheck));
+        Assert.assertTrue(boundaryCoordinates.hasWithinBounds(internalPoint));
     }
 
 
     @Test
-    public void testThatYCoordinateSmallerThanCurrentCoordinatesAreIdentifiedCorrectly() {
+    public void pointWithYCoordinateWithinBoundaryAreIdentified() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(5,5);
+        Coordinates boundaryCoordinates = new Coordinates(5,5);
 
         //When
-        Coordinates coordinatesToCheck = new Coordinates(5,4);
+        Coordinates internalPoint = new Coordinates(5,4);
 
         //Then
-        Assert.assertTrue(coordinatesSet.isGreaterThan(coordinatesToCheck));
+        Assert.assertTrue(boundaryCoordinates.hasWithinBounds(internalPoint));
     }
 
 
     @Test
-    public void testThatXCoordinateGreaterThanCurrentCoordinatesAreIdentifiedCorrectly() {
+    public void pointsWithXCoordinateOutsideBoundaryAreIdentified() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(5,5);
+        Coordinates boundaryCoordinates = new Coordinates(5,5);
 
         //When
-        Coordinates coordinatesToCheck = new Coordinates(8,5);
+        Coordinates externalPoint = new Coordinates(8,5);
 
         //Then
-        Assert.assertTrue(coordinatesSet.isLessThan(coordinatesToCheck));
+        Assert.assertTrue(boundaryCoordinates.hasOutsideBounds(externalPoint));
     }
 
 
     @Test
-    public void testThatYCoordinateGreaterThanCurrentCoordinatesAreIdentifiedCorrectly() {
+    public void pointsWithYCoordinateOutsideBoundaryAreIdentified() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(5,5);
+        Coordinates boundaryCoordinates = new Coordinates(5,5);
 
         //When
-        Coordinates coordinatesToCheck = new Coordinates(5,8);
+        Coordinates externalPoint = new Coordinates(5,8);
 
         //Then
-        Assert.assertTrue(coordinatesSet.isLessThan(coordinatesToCheck));
+        Assert.assertTrue(boundaryCoordinates.hasOutsideBounds(externalPoint));
     }
 
     @Test
-    public void testThatCoordinatesCanProvideNewerCoordinatesForAGivenStepSizeWithoutChangingCurrentCoordinates() {
+    public void immutableCoordinatesAreCreatedForNewStepSize() {
         //Given
-        Coordinates coordinatesSet = new Coordinates(5,5);
+        Coordinates boundaryCoordinates = new Coordinates(5,5);
 
         //When
-        Coordinates updatedCoordinates = coordinatesSet.newCoordinatesForStepSize(1, -1);
+        Coordinates newBoundary = boundaryCoordinates.newCoordinatesForStepSize(1, -1);
 
         //Then
-        Assert.assertEquals("6 4", updatedCoordinates.toString());
-        Assert.assertEquals("5 5", coordinatesSet.toString());
+        Assert.assertEquals("6 4", newBoundary.toString());
+        Assert.assertEquals("5 5", boundaryCoordinates.toString());
     }
 
 }
