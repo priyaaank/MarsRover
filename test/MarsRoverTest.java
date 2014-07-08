@@ -15,7 +15,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
-        marsRover.rotateLeft();
+        marsRover.turnLeft();
 
         //then
         Assert.assertEquals("1 2 W", marsRover.currentLocation());
@@ -29,7 +29,7 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(plateau, Direction.N, startingPosition);
 
         //When
-        marsRover.rotateRight();
+        marsRover.turnRight();
 
         //then
         Assert.assertEquals("1 2 E", marsRover.currentLocation());

@@ -32,11 +32,11 @@ public class MarsRover {
         return currentCoordinates.toString() + " " + currentDirection.toString();
     }
 
-    public void rotateRight() {
+    public void turnRight() {
         this.currentDirection = this.currentDirection.right();
     }
 
-    public void rotateLeft() {
+    public void turnLeft() {
         this.currentDirection = this.currentDirection.left();
     }
 

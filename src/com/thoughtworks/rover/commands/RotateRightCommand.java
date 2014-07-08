@@ -6,7 +6,7 @@ public class RotateRightCommand implements ICommand {
 
     @Override
     public void execute(final MarsRover rover) {
-        rover.rotateRight();
+        rover.turnRight();
     }
 
 }
