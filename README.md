@@ -1,3 +1,25 @@
+### Introduction
+--------------------
+
+This problem use to be a coding assignment problem at ThoughtWorks. With this repository and a series of blog posts here I use this problem to demonstrate application of OO concepts and design patterns. 
+
+Feel free to use it in any way you like. Reach out to me at "priyaaank [at] gmail" for any feedback or comments.
+
+The complete write rationalizing the code is in a series of blog (mentioned below):
+
+[Decoding ThoughtWorks' coding problem](http://priyaaank.tumblr.com/post/95095165285/decoding-thoughtworks-coding-problems)
+
+[Objects that talk domain](http://priyaaank.tumblr.com/post/95095193545/objects-that-talk-domain)
+
+[Objects that are loose and discrete](http://priyaaank.tumblr.com/post/95095211355/objects-that-are-loose-discrete)
+
+[Design patterns for win](http://priyaaank.tumblr.com/post/95095221320/design-patterns-for-win)
+
+[Reinforced design with TDD](http://priyaaank.tumblr.com/post/95095229180/reinforced-design-with-tdd)
+
+And other personal musings at my [blog](http://priyaaank.tumblr.com/)
+
+
 ### Mars Rovers thoughtworks puzzles
 --------------------
 
