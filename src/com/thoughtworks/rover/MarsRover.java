@@ -43,7 +43,7 @@ public class MarsRover {
     public void move() {
         Coordinates positionAfterMove = currentCoordinates.newCoordinatesForStepSize(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
 
-        //ignores the command if rover is bring driven off plateau
+        //ignores the command if rover is being driven off plateau
         if(plateau.hasWithinBounds(positionAfterMove))
             currentCoordinates = currentCoordinates.newCoordinatesFor(currentDirection.stepSizeForXAxis(), currentDirection.stepSizeForYAxis());
     }
