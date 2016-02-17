@@ -1,11 +1,11 @@
 ### Introduction
 --------------------
 
-This problem use to be a coding assignment problem at ThoughtWorks. With this repository and a series of blog posts here I use this problem to demonstrate application of OO concepts and design patterns. 
+This problem used to be a coding assignment at ThoughtWorks' interview coding round. With this repository and a series of blog posts here I use this problem to demonstrate application of OO concepts and design patterns. 
 
 Feel free to use it in any way you like. Reach out to me at "priyaaank [at] gmail" for any feedback or comments.
 
-The complete write rationalizing the code is in a series of blog (mentioned below):
+The complete write-up rationalizing the code is in a series of blog (mentioned below):
 
 [Decoding ThoughtWorks' coding problem](http://priyaaank.tumblr.com/post/95095165285/decoding-thoughtworks-coding-problems)
 
