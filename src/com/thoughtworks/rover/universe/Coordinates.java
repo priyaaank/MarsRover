@@ -16,7 +16,7 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        StringBuffer coordinateOutput = new StringBuffer();
+        StringBuilder coordinateOutput = new StringBuilder();
         coordinateOutput.append(xCoordinate);
         coordinateOutput.append(" ");
         coordinateOutput.append(yCoordinate);
