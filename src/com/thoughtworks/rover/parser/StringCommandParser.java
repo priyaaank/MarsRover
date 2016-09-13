@@ -10,7 +10,7 @@ import java.util.*;
 public class StringCommandParser {
 
     public static final String BY_EACH_CHARACTER = "";
-    public static final int START_INDEX = 1;
+    public static final int START_INDEX = 0;
 
     private static Map<String, ICommand> stringToCommandMap = new HashMap<String, ICommand>() {{
         put("L", new RotateLeftCommand());
@@ -33,6 +33,7 @@ public class StringCommandParser {
         List<ICommand> commands = new ArrayList<ICommand>();
 
         for(String commandCharacter : commandCharactersFrom(commandString)) {
+            if (commandCharacter == null) break;
             ICommand mappedCommand = lookupEquivalentCommand(commandCharacter.toUpperCase());
             commands.add(mappedCommand);
         }
