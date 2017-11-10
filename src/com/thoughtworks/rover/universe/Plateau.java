@@ -2,7 +2,8 @@ package com.thoughtworks.rover.universe;
 
 public class Plateau {
 
-    private Coordinates topRightCoordinates = new Coordinates(0, 0);
+    //update to top right coordinates
+    private Coordinates topRightCoordinates = new Coordinates(5, 5);
     private Coordinates bottomLeftCoordinates = new Coordinates(0, 0);
 
     public Plateau(final int topRightXCoordinate, final int topRightYCoordinate) {
