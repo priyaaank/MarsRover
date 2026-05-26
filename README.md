@@ -7,17 +7,17 @@ Feel free to use it in any way you like. Reach out to me at "priyaaank [at] gmai
 
 The complete write-up rationalizing the code is in a series of blog (mentioned below):
 
-[Decoding ThoughtWorks' coding problem](http://priyaaank.tumblr.com/post/95095165285/decoding-thoughtworks-coding-problems)
+[Decoding ThoughtWorks' coding problem](https://priyaaank.com/writing/decoding-thoughtworks-coding-problems/)
 
-[Objects that talk domain](http://priyaaank.tumblr.com/post/95095193545/objects-that-talk-domain)
+[Objects that talk domain](https://priyaaank.com/writing/objects-that-talk-domain/)
 
-[Objects that are loose and discrete](http://priyaaank.tumblr.com/post/95095211355/objects-that-are-loose-discrete)
+[Objects that are loose and discrete](https://priyaaank.com/writing/objects-that-are-loose-and-discrete/)
 
-[Design patterns for win](http://priyaaank.tumblr.com/post/95095221320/design-patterns-for-win)
+[Design patterns for win](https://priyaaank.com/writing/design-patterns-for-win/)
 
-[Reinforced design with TDD](http://priyaaank.tumblr.com/post/95095229180/reinforced-design-with-tdd)
+[Reinforced design with TDD](https://priyaaank.com/writing/reinforced-design-with-tdd/)
 
-And other personal musings at my [blog](http://priyaaank.tumblr.com/)
+And other personal musings at my [blog](https://priyaaank.com/)
 
 
 ### Mars Rovers thoughtworks puzzles
